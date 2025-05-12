@@ -56,7 +56,7 @@ await page.locator("(//input[@class='oxd-input oxd-input--active'])[2]").fill(pa
 await page.locator("//button[@type='submit']").click()
 
 //assertion
-//await expect(page).toHaveURL("/web/index.php/admin/payGrade/18",{timeout:15000})
+await expect(page).toHaveURL("/web/index.php/admin/payGrade/18",{timeout:15000})
 
 })
 }
