@@ -7,7 +7,7 @@ const creds={
     username:"Admin",
     password:"admin123"
 }
-test('Verify Add jobe tile with mandatory fields', async ({page})=>{
+test('Verify Add jobe tile with mandatory fields',{tag:"@smoke"}, async ({page})=>{
     
    // test.setTimeout(60000) //explicit timeout for only this test
     //navigate to the application
