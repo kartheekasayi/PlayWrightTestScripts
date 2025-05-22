@@ -42,7 +42,7 @@ test("Verify login with valid credentials", async () =>{
     //await login.uploadFile()
 
     await page.locator('input[type="file"]').setInputFiles('./testdata/files/demo.txt')
-    //await login.uploadFile("C:/Users/nikhi/Downloads/Automation Tester.docx")
+    
     await login.clickonSave()
     await expect(page.getByText("Successfully Saved")).toBeVisible()
     await login.verifyjobtitleissuccess()
