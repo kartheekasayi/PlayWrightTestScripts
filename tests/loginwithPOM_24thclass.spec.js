@@ -17,7 +17,7 @@ test.beforeEach(async ({browser})=>{
 
   await  login.launchApplication()
 
-  await login.verifyLogoVisibility()
+  await login.verifyLogo()
 
 })
 
@@ -53,4 +53,4 @@ test("Verify login with Invalid username and InValid Password", async () =>{
 
     await login.verifyErrorMessage()
     
-})
+}) 
