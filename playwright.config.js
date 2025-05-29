@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+require('dotenv').config()
 
 /**
  * Read environment variables from file.
@@ -31,7 +32,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['list'], ['html'],["allure-playwright"]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     
@@ -46,7 +47,15 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
+
+    //  {
+    //   name: "setup",
+    //   use: { ...devices['Desktop Chrome'], 
+    //     channel: 'chrome'  },
+    //   testMatch: /.*\.setup\.js/,
+    // },
+
+     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
@@ -80,6 +89,17 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+
+    
+    // {
+    // name: 'Google Chrome',
+    //   use: { ...devices['Desktop Chrome'], channel: 'chrome', 
+    //         storageState: ".auth/user.json",
+    //     //  viewport : { width: 412, height: 914 }
+    //   },
+    //    dependencies: ["setup"],
+  
+    //  },
   ],
 
   /* Run your local dev server before starting the tests */

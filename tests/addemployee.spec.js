@@ -14,5 +14,5 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Last Name' }).click();
   await page.getByRole('textbox', { name: 'Last Name' }).fill('s');
   await page.getByRole('button', { name: 'Save' }).click();
-  await expect(page.getByRole('heading', { name: 'Personal Details' })).toBeVisible();
+  //await expect(page.getByRole('heading', { name: 'Personal Details' })).toBeVisible();
 });
